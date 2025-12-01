@@ -438,7 +438,13 @@ h2 {
   color: #FFFDF7;
 }
 
-
+.site-footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: #007a33;
+}
 
 
 
