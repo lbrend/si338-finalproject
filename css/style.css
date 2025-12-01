@@ -1,0 +1,446 @@
+html, body {
+  min-height: 100vh;
+}
+
+.skip {
+  position: absolute;
+  left: -999px;
+  top: 10px;
+  background: #007a33;
+  font-family: Roboto, sans-serif;
+  color: #fff;
+  padding: 8px 20px;
+  z-index: 100;
+  border-radius: 4px;
+  font-size: 1.1em;
+  text-decoration: none;
+  transition: left 0.8s ease;
+}
+
+.skip:focus {
+  left: 10px; 
+  outline: 2px solid #ba9653;
+  box-shadow: 10px 10px 30px #050505;
+}
+
+header {
+    background-color: #FFFDF7;
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.header-logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 40px;
+}
+
+.logo {
+    height: 100px;
+    margin-right: 18px;
+    margin-left: 18px;
+}
+
+.logo:hover {
+    animation: bounce 1.4s;
+}
+
+@keyframes bounce {
+    /* something new learned */
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-25px);
+  }
+  60% {
+    transform: translateY(-12px);
+  }
+}
+
+.nav {
+  display: flex;
+  justify-content:flex-end;
+  width: 100%;
+  padding-right: 40px;
+  box-sizing: border-box;
+}
+    
+
+
+.nav li {
+  list-style: none;
+}
+
+
+.nav a {
+  color: black;
+ text-decoration: none;
+ font-weight: bold;
+ font-size: 24px;
+ padding: 6px 16px;
+ font-family: Montserrat, sans-serif;
+
+}
+.nav a:hover:not(.active) {
+  color: #008348;
+  transition: 0.3s;
+
+}
+.nav li a.active {
+  font-size: 24px;
+  text-transform: uppercase;
+  text-decoration: underline;
+  
+  color: #FF4500;
+  text-underline-offset: 10px;
+  text-decoration-thickness: 4px;
+  
+}
+
+.nav a:focus {  
+    /* for accessibility */
+  outline: 2px solid #008348;
+  outline-offset: 2px;
+}
+
+
+body {
+  text-align: center;
+  color: #ffffff;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+  
+} 
+
+.home-bg::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.44); /* Black overlay with 44% opacity */
+  z-index: 0;
+  pointer-events: none;
+}
+
+
+main, header, .header-logo, h1, h2, p {
+  position: relative;
+  z-index: 1;
+}
+
+.home-bg {
+  background-image: url('../images/tdgarden.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+}
+
+.roster-bg {
+  background-color: #008348;
+  /* Remove any background image */
+  background-image: none;
+}
+
+.roster-h1 {
+    font-family: 'Spectral', serif;
+    font-weight: 700;
+    text-align: center;
+    color: #FFFACD;
+}
+
+
+h1 {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    font-family: 'Patua One';
+    font-size: 80px;
+    color: white;
+}
+
+header h2 {
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Tiro Tamil';
+    font-style: italic;
+    margin: 10px 0px;
+    font-size: 25px;
+    letter-spacing: 1.5px;
+} 
+
+
+.main-content {
+  background: rgba(255, 255, 255, 0.27); 
+  border-radius: 60px;
+  padding: 1em;
+  max-width: 700px;
+  margin: 3em auto;
+}
+
+.main-content h1 {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #555524;
+    text-shadow: 2px 3px #1e1e1e;
+}
+
+.main-content h2 {
+    text-shadow: 2px 2px #1e1e1e;
+    font-size: 3em;
+    color: #008348;
+}
+
+.main-content p {
+  margin: 0; 
+  text-shadow: 2px 2px #1e1e1e;
+}
+
+.main-content .extra-padding {
+    padding-bottom: 20px;
+}
+
+
+.cta-btn {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 12px 30px;
+  background-color: #008348;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 20px;
+  border-radius: 30px;
+  font-family: 'Montserrat', sans-serif;
+  transition: background-color 0.3s ease;
+  text-shadow: 1px 1px #1e1e1e;
+}   
+
+.cta-btn:hover {
+    background-color: #032b03;
+    color: #bababa;
+}
+
+
+/* mobile-view adjustments */
+@media (max-width: 800px) {
+  .main-content {
+    max-width: 96vw;
+    padding: 0.7em;
+    border-radius: 24px;
+    margin: 1.5em auto;
+  }
+  .logo {
+    height: 56px;
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+  .header-logo {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 8vw;
+  }
+  .nav {
+    padding-right: 0;
+    width: auto;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  .nav a {
+    font-size: 17px;
+    padding: 7px 8px;
+  }
+  
+  .nav li a.navRoster {
+    font-size: 24px;
+    font-weight: 700;
+    
+  }
+
+  h1 {
+    font-size: 44px;
+    margin-top: 28px;
+    margin-bottom: 18px;
+  }
+  .main-content h2 {
+    font-size: 2em;
+  }
+  .cta-btn {
+    font-size: 17px;
+    padding: 10px 22px;
+  }
+}
+ 
+
+
+/* team roster and player cards */
+.player-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  overflow: visible;
+}
+
+
+.player-card {
+  width: 230px;
+  height: 320px;
+  perspective: 1000px;
+  margin: 1.5em;
+  display: inline-block; 
+  cursor: pointer;
+  transition: opacity 0.35s, transform 0.4s;
+  transition: transform 0.3s cubic-bezier(.44,1.55,.72,.83);
+}
+
+
+.player-card:hover:not(.flipped) .card-inner {
+  transform: rotateY(31deg);
+}
+
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /* transition: transform 0.8s cubic-bezier(.55,-0.09,.53,1.13); */
+  transition: transform 0.8s cubic-bezier(0.45,-0.39,.93,1.1);
+  transform-style: preserve-3d;
+}
+
+
+.player-card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0; top: 0;
+  backface-visibility: hidden;
+  border-radius: 25px;
+  box-shadow: 3px 3px 12px rgb(34, 34, 34);
+}
+
+
+.card-front {
+  background: #FFFDF7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.card-front img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 85px;
+  box-shadow: 3px 3px 12px #333333;
+}
+
+.card-front img.baylor-img {
+    margin-bottom: 40px 
+}
+
+
+.card-front h2 {
+  font-family: 'Spectral', serif;
+  font-size: 1.5em;
+  color: #007a33;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: 0px;
+}
+
+.card-front p {
+  font-family: 'Montserrat', sans-serif;
+  margin: 8px 0 0 0;
+  font-size: 1em;
+  color: #202020dc
+}
+
+.card-back {
+  background: #FFFDF7;
+  color: #007a33;
+  transform: rotateY(180deg);
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.card-back h3 {
+  font-family: 'Spectral', serif;
+  font-size: 1.12em;
+  margin-bottom: 120px;
+  color: black;
+}
+
+
+
+
+.card-back ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1em;
+}
+
+
+.card-back li {
+  margin-bottom: 7px;
+}
+
+.card-back ul li strong {
+  font-weight: 700;
+  color: #39007a;
+}
+
+
+/* team roster nav buttons (filter buttons) */
+.filter-nav {
+  text-align: center;
+  margin-bottom: 1.5em;
+}
+
+.filter-btn {
+  background: #FFFDF7;
+  color: #007a33;
+  border: 2px solid #555555;
+  font-family: 'Montserrat',sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 22px;
+  padding: 8px 24px;
+  margin: 0 8px 8px 0;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+.filter-btn.active,
+.filter-btn:hover {
+  background: #4c524f;
+  color: #FFFDF7;
+}
+
+
+
+
+
+
+
